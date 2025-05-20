@@ -89,7 +89,7 @@ results_df = pd.DataFrame({
     "Predator": predator
 })
 
-st.subheader("📊 Time Series")
+st.subheader("☆ Time Series")
 fig, ax = plt.subplots()
 ax.plot(t, prey, label="Prey")
 ax.plot(t, predator, label="Predator")
@@ -98,7 +98,7 @@ ax.set_ylabel("Population")
 ax.legend()
 st.pyplot(fig)
 
-st.subheader("🔁 Phase Plot (Prey vs Predator)")
+st.subheader("🐰🥕 Phase Plot (Prey vs Predator)")
 fig2, ax2 = plt.subplots()
 ax2.plot(prey, predator, lw=1)
 ax2.set_xlabel("Prey Population")
@@ -106,17 +106,17 @@ ax2.set_ylabel("Predator Population")
 ax2.set_title("Phase Plot")
 st.pyplot(fig2)
 
-st.subheader("📈 Population Statistics")
+st.subheader("☆ Population Statistics")
 st.write("### Prey")
 st.write(results_df["Prey"].describe())
 
 st.write("### Predator")
 st.write(results_df["Predator"].describe())
 
-st.subheader("📥 Download Data")
+st.subheader("🐰🥕 Download Data")
 st.download_button("Download CSV", data=results_df.to_csv(index=False), file_name="lotka_volterra_data.csv")
 
-st.subheader("📊 Histograms")
+st.subheader("☆ Histograms")
 fig3, (ax3, ax4) = plt.subplots(1, 2, figsize=(12, 4))
 ax3.hist(prey, bins=30, color="skyblue", edgecolor="black")
 ax3.set_title("Prey Histogram")
@@ -129,8 +129,8 @@ ax4.set_xlabel("Population")
 ax4.set_ylabel("Frequency")
 st.pyplot(fig3)
 
-st.subheader("📋 Raw Data Table")
+st.subheader("🐰🥕 Raw Data Table")
 st.dataframe(results_df)
 
 st.markdown("---")
-st.markdown("Made with ❤️ using Streamlit")
+st.markdown("Deployed online thanks to Streamlit.")
